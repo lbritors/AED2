@@ -14,7 +14,7 @@ int max(int *v, int n)
 void counting_sort(int *v, int n, int div, int base, int *s)
 {
     int i, t, c[base], acum=0;
-    memset(c, n*sizeof(int), 0);
+    memset(c, 0, sizeof(int)*base);
 
     #define DIGIT(X) ((X/div) % base)
 
