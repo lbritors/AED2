@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define DEBUG 0
+#include "insertion.h"
+ 
+#define DEBUG 1
 
 //Esta função aloca e inicializa um vetor de n inteiros aleatórios
 int* gerar_vetor_aleatorio(int n, int max, int seed){
@@ -45,10 +46,14 @@ int main(int argc, char** argv){
     srand(0);
 
     v = gerar_vetor_aleatorio(n, n * 100, 0);
+    
+    insertionSort(v, n);
 
     #if DEBUG
+    printf('\n');
     imprimir_vetor(v, n);
     #endif
+
 
     return 0;
 }
